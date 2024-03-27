@@ -1,1 +1,1 @@
-# Intro-To-CTF
+# WIT x SecSoc Introduction To CTF
