@@ -37,7 +37,7 @@ services:
   # SSRF Challenge
   hyperdome:
     build:
-      context: ./Challenges/Technical/app
+      context: ./Challenges/Technical/SSRF/app
     restart: unless-stopped
     networks:
       - web
@@ -49,7 +49,7 @@ services:
 
   app2:
     build:
-      context: ./Challenges/Technical/app2
+      context: ./Challenges/Technical/SSRF/app2
     restart: unless-stopped
     networks:
       - internal
