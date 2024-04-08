@@ -1,0 +1,40 @@
+version: '2.1'
+
+services:
+  traefik:
+    image: traefik:v1.7 # The official Traefik docker image
+    command:
+      - --configFile=/traefik.toml    # Tells the container where the traefik config file is located
+      - --docker                      # Tells Traefik to listen to docker
+    networks:
+      - web
+    ports:
+      - "80:80"                       # The HTTP port
+      - "443:443"                     # The HTTPS port
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+      # Mounts the traefik.toml file found in the VM to the container
+      - /var/traefik/traefik.toml:/traefik.toml
+      # Mounts the acme.json file found in the VM to the container
+      - /var/traefik/acme.json:/acme.json
+    restart: unless-stopped
+
+  # add dockerised challenges services
+
+  master-yoda:
+    build: ./Challenges/Technical/master-yoda
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:master-yoda.ctf.secso.cc"
+      - "traefik.port=5000"
+      - "traefik.docker.network=web"
+
+networks:
+  web:
+    external: true
+  binary:
+    external: true
