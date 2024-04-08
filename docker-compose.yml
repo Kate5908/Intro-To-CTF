@@ -51,8 +51,6 @@ services:
     build:
       context: ./Challenges/Technical/SSRF/app2
     restart: unless-stopped
-    networks:
-      - internal
 
 networks:
   web:
