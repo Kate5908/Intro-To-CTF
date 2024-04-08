@@ -22,6 +22,7 @@ services:
 
   # add dockerised challenges services
 
+  # XXE Challenge
   master-yoda:
     build: ./Challenges/Technical/master-yoda
     restart: unless-stopped
@@ -32,6 +33,26 @@ services:
       - "traefik.frontend.rule=Host:master-yoda.ctf.secso.cc"
       - "traefik.port=5000"
       - "traefik.docker.network=web"
+
+  # SSRF Challenge
+  hyperdome:
+    build:
+      context: ./Challenges/Technical/app
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:hyperdome.ctf.secso.cc"
+      - "traefik.port=5000"
+      - "traefik.docker.network=web"
+
+  app2:
+    build:
+      context: ./Challenges/Technical/app2
+    restart: unless-stopped
+    networks:
+      - internal
 
 networks:
   web:
