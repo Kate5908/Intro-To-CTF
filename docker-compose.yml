@@ -52,7 +52,7 @@ services:
 
   app2:
     build:
-      context: ./app2
+      context: ./Challenges/Technical/SSRF/app2
     networks:
       - default
 
