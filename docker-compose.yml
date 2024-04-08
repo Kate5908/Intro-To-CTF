@@ -44,16 +44,20 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:hyperdome.ctf.secso.cc"
-      - "traefik.port=5000"
+      - "traefik.port=80"
       - "traefik.docker.network=web"
 
   app2:
     build:
       context: ./Challenges/Technical/SSRF/app2
     restart: unless-stopped
+    networks:
+      - default
 
 networks:
   web:
     external: true
   binary:
     external: true
+  default:
+    driver: bridge
