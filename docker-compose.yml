@@ -43,7 +43,7 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:app1.ctf.secso.cc"
+      - "traefik.frontend.rule=Host:hyperdome.ctf.secso.cc"
       - "traefik.port=5000"
       - "traefik.docker.network=web"
     depends_on:
