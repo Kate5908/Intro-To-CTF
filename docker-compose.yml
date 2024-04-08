@@ -23,7 +23,7 @@ services:
   # add dockerised challenges services
 
   master-yoda:
-    build: ./Challenges/Technical/XXE
+    build: ./Challenges/Technical/master-yoda
     restart: unless-stopped
     networks:
       - web
