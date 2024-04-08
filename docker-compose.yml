@@ -22,14 +22,14 @@ services:
 
   # add dockerised challenges services
 
-  xxe:
+  master-yoda:
     build: ./Challenges/Technical/XXE
     restart: unless-stopped
     networks:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:xxe.ctf.secso.cc"
+      - "traefik.frontend.rule=Host:master-yoda.ctf.secso.cc"
       - "traefik.port=5000"
       - "traefik.docker.network=web"
 
