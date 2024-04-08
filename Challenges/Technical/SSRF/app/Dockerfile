@@ -22,4 +22,4 @@ USER www-data
 
 # configure the container to run in an executed manner
 
-ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:80", "app:app"]
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
