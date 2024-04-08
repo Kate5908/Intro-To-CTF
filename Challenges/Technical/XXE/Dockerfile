@@ -25,4 +25,6 @@ USER www-data
 # configure the container to run in an executed manner
 ENTRYPOINT [ "python" ]
 
+EXPOSE 5000
+
 CMD ["app.py" ]
