@@ -1,0 +1,10 @@
+# robots.txt file for this website
+
+User-agent: *
+Disallow: /testing
+Disallow: /comment
+Disallow: /banking
+Disallow: /ping
+Disallow: /flag
+Disallow: /entrance
+Disallow: /development

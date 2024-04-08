@@ -22,8 +22,8 @@ def store():
             return jsonify({'status': 'no', 'message': 'No file part'})
         file = request.files['xml']
         xml = file.read()
-        print(xml)
-        parser = etree.XMLParser(resolve_entities=True)
+        
+        parser = etree.XMLParser()
         root = etree.fromstring(xml,parser)
         xml_str = etree.tostring(root, pretty_print=True, encoding="unicode")
         return jsonify({'status':'yes','data':xml_str})

@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  app1:
+    build:
+      context: ./app
+    ports:
+      - "5000:80"  # app is still accessible from the host
+    depends_on:
+      - app2
+
+  app2:
+    build:
+      context: ./app2
+    # No ports mapping for app2, making it inaccessible from the host
