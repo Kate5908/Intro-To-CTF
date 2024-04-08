@@ -41,6 +41,7 @@ services:
     restart: unless-stopped
     networks:
       - web
+      - default
     labels:
       - "traefik.enable=true"
       - "traefik.frontend.rule=Host:hyperdome.ctf.secso.cc"
@@ -52,9 +53,13 @@ services:
   app2:
     build:
       context: ./Challenges/Technical/SSRF/app2
+    networks:
+      - default
 
 networks:
   web:
     external: true
   binary:
     external: true
+  default:
+    driver: bridge
