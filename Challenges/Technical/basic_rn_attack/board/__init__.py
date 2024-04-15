@@ -1,6 +1,7 @@
 from flask import Flask
+app = Flask(__name__)
 
-from app import routes
+from . import routes  # Assuming routes.py is correctly placed in the same board directory
 
 def create_app():
     app = Flask(__name__)
