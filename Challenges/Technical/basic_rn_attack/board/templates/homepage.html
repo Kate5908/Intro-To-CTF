@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+
+<html>
+<h1>Employee staff portal</h1>
+<form acton="/" method="POST">
+    <label form="label">Username </label>
+    <input type="text" value="{{ request.form['username']}}" name="username"><br><br>
+    <label form="label">Password </label>
+    <input type="text" value="{{ request.form['password']}}" name="password"><br><br>
+    <button submit="submit">Login</button>
+</form>
+
+</html>
