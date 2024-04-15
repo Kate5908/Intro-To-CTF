@@ -1,0 +1,4 @@
+# robots.txt file for this website
+
+User-agent: *
+Disallow: /tools

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<header>
+        <title>The Sandbox</title>
+        <style>
+                body {
+                        background-image: url('/static/vuln.png');
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                }
+                body {
+                        background-image: url('/static/vuln.png');
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                }
+                form {
+                        margin: 0;
+                        position: absolute;
+                        top: 60%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                }
+                div {
+                        margin: 0;
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                }
+        </style> 
+</header>
+<body>
+        <center>
+        <form method="post" action="/tools/search">
+                <input type="search" id="query" name="q" placeholder="Search...">
+                <input type="submit" name="submit" value="tools"/>
+        </form>    
+        </center>
+</body>
