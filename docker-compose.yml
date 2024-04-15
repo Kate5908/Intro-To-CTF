@@ -58,7 +58,7 @@ services:
 
   # Rainbow Tables Challenge
   exposed-passwords:
-    build: ./Challenges/Technical/exposed-passwords
+    build: ./Challenges/Technical/basic_rn_attack
     restart: unless-stopped
     networks:
       - web
