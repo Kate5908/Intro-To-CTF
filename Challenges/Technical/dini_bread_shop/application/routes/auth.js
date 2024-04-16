@@ -15,7 +15,7 @@ router.post('/login', async (req, res) => {
         return res.redirect('dashboard');
     } catch (error) {
         console.error(error.message);
-        res.status(500).send("server error");
+        res.status(500).send("server error " + error.message);
     }
 });
 
