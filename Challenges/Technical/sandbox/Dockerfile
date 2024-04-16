@@ -1,8 +1,17 @@
+# start by pulling the python image
+FROM python:3.11
+
+
+# copy the requirements file into the image
+COPY app/requirements.txt /app/requirements.txt
+
+WORKDIR /app
 # install the dependencies and packages in the requirements file
 RUN pip install -r requirements.txt
 
+copy /app .
 # create flag 
-RUN chown www-data:www-data /flag.txt
+
 # switch to the www-data user
 USER www-data
 
