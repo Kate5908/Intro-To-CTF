@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<header>
+        <title>Image 3</title>
+</header>
+<body>
+        <centre>
+                <h1>Hint: Australia</h1>
+                {% if status == "1" %}
+                        <img src="../static/image3/img1.png"></img>
+                {% elif status == "2" %}
+                        <img src="../static/image3/img2.png"></img>
+                {% elif status == "3" %}
+                        <img src="../static/image3/img3.png"></img>
+                {% elif status == "4" %}
+                        <img src="../static/image3/img4.png"></img>
+                {% elif status == "5" %}
+                        <img src="../static/image3/img5.png"></img>
+                {% else %}
+                        <img src="../static/image3/img6.png"></img>
+                {% endif %}
+        </centre>
+</body>

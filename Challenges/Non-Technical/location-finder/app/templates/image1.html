@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<header>
+        <title>Image 1</title>
+</header>
+<body>
+        <centre>
+                {% if status == "1" %}
+                        <h1>Hint: South Africa</h1>
+                        <img src="../static/image1/img1.png"></img>
+                {% elif status == "2" %}
+                        <h1>Hint: Uruguay</h1>
+                        <img src="../static/image1/img2.png"></img>
+                {% elif status == "3" %}
+                        <h1>Hint: Chile</h1>
+                        <img src="../static/image1/img3.png"></img>
+                {% elif status == "4" %}
+                        <h1>Hint: Australia</h1>
+                        <img src="../static/image1/img4.png"></img>
+                {% elif status == "5" %}
+                        <h1>Hint: Australia</h1>
+                        <img src="../static/image1/img5.png"></img>
+                {% else %}
+                        <h1>Hint: South Africa</h1>
+                        <img src="../static/image1/img6.jpg"></img>
+                {% endif %}
+        </centre>
+</body>
