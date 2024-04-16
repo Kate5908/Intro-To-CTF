@@ -7,7 +7,7 @@ app = Flask(__name__)
 def index(): 
     return render_template("index.html")
 
-@app.route("/vuln",methods=["GET"])
+@app.route("/tools",methods=["GET"])
 def vulnerable():
     return render_template("vuln.html")
 
