@@ -22,6 +22,8 @@ services:
 
   # add dockerised challenges services
 
+  # WEB CHALLENGES
+
   # XXE Challenge
   master-yoda:
     build: ./Challenges/Technical/master-yoda
@@ -67,6 +69,72 @@ services:
       - "traefik.frontend.rule=Host:exposed-passwords.ctf.secso.cc"
       - "traefik.port=8000"
       - "traefik.docker.network=web"
+
+  sandbox:
+    build: ./Challenges/Technical/sandbox
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:sandbox.ctf.secso.cc"
+      - "traefik.port=4999"
+      - "traefik.docker.network=web"
+  
+  location-finder:
+    build: ./Challenges/Non-Technical/location-finder/app
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:location-finder.ctf.secso.cc"
+      - "traefik.port=4999"
+      - "traefik.docker.network=web"
+
+  notecloak:
+    build: ./Challenges/Technical/ctf-challenge
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:notecloak.ctf.secso.cc"
+      - "traefik.port=4000"
+      - "traefik.docker.network=web"
+
+  dini-bread-shop:
+    build: ./Challenges/Technical/dini-bread-shop
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:dini-bread-shop.ctf.secso.cc"
+      - "traefik.port=3000"
+      - "traefik.docker.network=web"
+
+  # BINARY CHALLENGES
+
+  rop-binex:
+    build: ./Challenges/Technical/rop-binex
+    restart: unless-stopped
+    ports:
+      - "5000:9999"
+    networks:
+      - binary
+    labels:
+      - "traefik.enable=false"
+
+  shell-binex:
+    build: ./Challenges/Technical/shellcode-binex
+    restart: unless-stopped
+    ports:
+      - "5001:9999"
+    networks:
+      - binary
+    labels:
+      - "traefik.enable=false"
 
 networks:
   web:
