@@ -116,25 +116,25 @@ services:
 
   # BINARY CHALLENGES
 
-  rop-binex:
-    build: ./Challenges/Technical/rop-binex
-    restart: unless-stopped
-    ports:
-      - "5000:9999"
-    networks:
-      - binary
-    labels:
-      - "traefik.enable=false"
+  # rop-binex:
+  #   build: ./Challenges/Technical/rop-binex
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5000:9999"
+  #   networks:
+  #     - binary
+  #   labels:
+  #     - "traefik.enable=false"
 
-  shell-binex:
-    build: ./Challenges/Technical/shellcode-binex
-    restart: unless-stopped
-    ports:
-      - "5001:9999"
-    networks:
-      - binary
-    labels:
-      - "traefik.enable=false"
+  # shell-binex:
+  #   build: ./Challenges/Technical/shellcode-binex
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5001:9999"
+  #   networks:
+  #     - binary
+  #   labels:
+  #     - "traefik.enable=false"
 
 networks:
   web:
