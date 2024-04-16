@@ -56,6 +56,18 @@ services:
     networks:
       - default
 
+  # Rainbow Tables Challenge
+  exposed-passwords:
+    build: ./Challenges/Technical/basic_rn_attack
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.frontend.rule=Host:exposed-passwords.ctf.secso.cc"
+      - "traefik.port=8000"
+      - "traefik.docker.network=web"
+
 networks:
   web:
     external: true

@@ -23,7 +23,7 @@ def store():
         file = request.files['xml']
         xml = file.read()
         
-        parser = etree.XMLParser()
+        parser = etree.XMLParser(resolve_entities=True)
         root = etree.fromstring(xml,parser)
         xml_str = etree.tostring(root, pretty_print=True, encoding="unicode")
         return jsonify({'status':'yes','data':xml_str})
