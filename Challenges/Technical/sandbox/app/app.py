@@ -1,11 +1,7 @@
-from flask import Flask, render_template, send_from_directory, request, make_response, redirect, url_for
-import requests 
-from urllib.parse import urlparse
+from flask import Flask, render_template, send_from_directory, request
 import os
 
 app = Flask(__name__)
-
-
 
 @app.route("/",methods=["GET"])
 def index(): 
