@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>jiggy Shop</title>
+</head>
+<body>
+    <div class="main">
+        <div class="wrapper">
+            <div class="login">
+                <h1 class="login message">Welcome to the Bread Shop!</h1><br>
+                <div class="login wrapper">
+                    <h2 class="login prompt">Login</h2>
+                    <form action="/users/login" method="POST">
+                        <label for="username">Username:</label><br>
+                        <input type="text" id="username" name="username"><br><br>
+                        <label for="password">Password:</label><br>
+                        <input type="password" id="password" name="password"><br>
+                        <br>
+                        <%if (error) { %>
+                            <p class="login-error">Invalid Credentials</p>
+                            <% } %>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="right-menu">
+            <div class="menu-button" onclick="openMenu(this)">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="memberlist"></div>
+            <div class="list">
+                <li class="list1">jason</li><br>
+                <li class="list1">dini</li><br>
+                <li class="list1">kitty</li><br>
+            </div>
+        </div>
+    </div>
+    <script>
+        let counter = 0;
+
+        function openMenu(x) {
+            x.parentElement.classList.toggle("change");
+        }
+    </script>
+</body>
+</html>
