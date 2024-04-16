@@ -93,7 +93,7 @@ services:
       - "traefik.docker.network=web"
 
   notecloak:
-    build: ./Challenges/Technical/ctf-challenge
+    build: ./Challenges/Technical/ctf_challenge
     restart: unless-stopped
     networks:
       - web
@@ -104,7 +104,7 @@ services:
       - "traefik.docker.network=web"
 
   dini-bread-shop:
-    build: ./Challenges/Technical/dini-bread-shop
+    build: ./Challenges/Technical/dini_bread_shop
     restart: unless-stopped
     networks:
       - web
