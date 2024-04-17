@@ -2,7 +2,7 @@ FROM ubuntu:latest
 
 EXPOSE 9999
 
-RUN apt-get update && apt-get install -y socat \
+RUN apt-get install -y socat \
 	&& apt-get install -y clang \
 	&& apt-get install -y gcc \
 	&& apt-get install -y make
